@@ -2,8 +2,10 @@ import axios from 'axios';
 import './App.css' 
 import RecipeList from './components/RecipeList';
 
+url = process.env.REACT_APP_API_URL
+
 const apiCall = () => {
-  axios.get('http://localhost:8080').then((data) => {
+  axios.get(url).then((data) => {
     console.log(data)
   })
 }

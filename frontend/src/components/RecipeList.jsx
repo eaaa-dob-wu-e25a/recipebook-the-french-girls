@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+url = process.env.REACT_APP_API_URL
+
 function RecipeList() {
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
-      axios.get("http://localhost:8080/recipes").then((response) => {
+      axios.get(url + "/recipes").then((response) => {
           setRecipes(response.data.recipes);
       });
     }, []);
